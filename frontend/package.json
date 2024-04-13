@@ -1,23 +1,37 @@
 {
-  "name": "afterjam",
+  "name": "mirzam",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build --emptyOutDir",
-    "preview": "vite preview",
-    "host": "vite preview --host"
+    "preview": "vite preview"
   },
   "dependencies": {
-    "bootstrap": "^5.3.3",
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-brands-svg-icons": "^6.5.2",
+    "@fortawesome/free-regular-svg-icons": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/vue-fontawesome": "^3.0.6",
+    "axios": "^1.6.8",
+    "fontawesome": "^5.6.3",
+    "mitt": "^3.0.1",
+    "queue-microtask": "^1.2.3",
     "vue": "^3.4.21",
-    "vue-router": "^4.3.0"
+    "vue-ionicons": "^3.0.5",
+    "vue-router": "^4.3.0",
+    "vue3-table-lite": "^1.4.0",
+    "vuedraggable": "^4.1.0"
   },
   "devDependencies": {
+    "@vicons/ionicons5": "^0.12.0",
     "@vitejs/plugin-vue": "^5.0.4",
+    "naive-ui": "^2.38.1",
     "typescript": "^5.2.2",
-    "vite": "^5.1.6",
+    "unplugin-vue-components": "^0.26.0",
+    "vfonts": "^0.0.3",
+    "vite": "^5.2.8",
     "vue-tsc": "^1.8.27"
   }
 }

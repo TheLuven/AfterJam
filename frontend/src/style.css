@@ -3,17 +3,17 @@
   line-height: 1.5;
   font-weight: 400;
 
-  --primaryColor: #000;
-  --onPrimaryColor: #fff;
-  --secondaryColor: #c1c1c1;
-  --textColor: #fff;
-  --secondaryTextColor: #8c8c8c;
-  --borderColor: #e5e5ea;
-  --backgroundColor: #000;
-  --backgroundColorTransparent: #0000;
-  --secondaryBackground: #f7f7f7;
-  --navbarColor: #0000;
-  --darkColor: #1c1c1e;
+  --primaryColor: #070709;
+  --onPrimaryColor: ;
+  --secondaryColor: ;
+  --textColor: ;
+  --secondaryTextColor: ;
+  --borderColor: ;
+  --backgroundColor: #070709;
+  --backgroundColorTransparent: ;
+  --secondaryBackground: #000;
+  --navbarColor: ;
+  --darkColor: ;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -35,21 +35,7 @@ body {
   display: flex;
   place-items: center;
   min-width: 320px;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-.card {
-  padding: 2em;
-}
-html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+  background-color: var(--backgroundColor);
 }
 
 #app {
@@ -57,17 +43,4 @@ body {
   height: 100%;
   margin: 0 auto;
   text-align: center;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }
