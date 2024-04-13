@@ -1,0 +1,16 @@
+{
+    "name": "mirzam",
+    "author": "Mirzam",
+    "description": "Web Application for the project Mirzam",
+    "version": "1.0.0",
+    "scripts": {
+      "build": "npm run build-frontend && npm run clean && npm run move",
+      "dev-frontend": "cd frontend && vite",
+      "dev-backend": "cd backend && mvnw spring-boot:run",
+      "build-frontend": "cd frontend && npm run build" ,
+      "clean": "cd ./backend/src/main/resources/static && del /Q /S * && rmdir /q assets && cd ../ && rmdir /q static",
+      "move": "move ./frontend/dist ./backend/src/main/resources/ && cd  ./backend/src/main/resources && ren dist static",
+      "war": "cd backend && move target/*.war target/mirzam.war"
+    },
+    "private": true
+  }
