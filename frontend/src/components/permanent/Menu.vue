@@ -11,7 +11,7 @@
           :class="['background', 'custom-slider']"
       >
         <n-layout-header class="background">
-          <img src="../../public/assets/LogoInversed.svg" alt="Logo" :class="collapsed ? 'logo-collapsed' : 'logo'"/>
+          <img src="../../../public/assets/LogoInversed.svg" alt="Logo" :class="collapsed ? 'logo-collapsed' : 'logo'"/>
         </n-layout-header>
         <n-divider class="divider"/>
         <n-menu
@@ -43,8 +43,14 @@ import {h, ref} from 'vue'
 import {MenuOption, NIcon} from 'naive-ui'
 import {
   BookOutline as BookIcon,
-  SettingsOutline as SettingsIcon
+  SettingsOutline as SettingsIcon,
 } from '@vicons/ionicons5'
+import {
+  PeopleSettings20Regular as PeopleSettingsIcon
+} from '@vicons/fluent'
+import {
+  ChecklistRtlSharp as ListIcon,
+} from '@vicons/material'
 
 function renderIcon(icon: any) {
   return () => h(NIcon, null, {default: () => h(icon)})
@@ -63,12 +69,12 @@ const menuOptions: MenuOption[] = [
   {
     label: 'Vérifier',
     key: 'verified',
-    icon: renderIcon(BookIcon),
+    icon: renderIcon(ListIcon),
   },
   {
     label: 'Jam Session',
     key: 'configure',
-    icon: renderIcon(BookIcon)
+    icon: renderIcon(PeopleSettingsIcon)
   }
 ]
 </script>
