@@ -42,7 +42,6 @@
 import {h, ref} from 'vue'
 import {MenuOption, NIcon} from 'naive-ui'
 import {
-  BookOutline as BookIcon,
   SettingsOutline as SettingsIcon,
 } from '@vicons/ionicons5'
 import {
@@ -51,6 +50,9 @@ import {
 import {
   ChecklistRtlSharp as ListIcon,
 } from '@vicons/material'
+import {
+  Home as Home
+} from '@vicons/carbon'
 
 function renderIcon(icon: any) {
   return () => h(NIcon, null, {default: () => h(icon)})
@@ -64,7 +66,7 @@ const menuOptions: MenuOption[] = [
   {
     label: 'Acceuil',
     key: 'home',
-    icon: renderIcon(BookIcon)
+    icon: renderIcon(Home)
   },
   {
     label: 'Vérifier',
