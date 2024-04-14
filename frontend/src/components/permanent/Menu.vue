@@ -13,7 +13,7 @@
         <n-layout-header class="background">
           <img src="../../../public/assets/LogoInversed.svg" alt="Logo" :class="collapsed ? 'logo-collapsed' : 'logo'"/>
         </n-layout-header>
-        <n-divider class="divider"/>
+
         <n-menu
             :inverted="inverted"
             :collapsed-width="64"
@@ -27,11 +27,12 @@
         >
           <n-divider class="divider"/>
           <div class="settings-icon">
-            <component :is="renderSettingsIcon()" class="icon"/>
+            <component :is="renderSettingsIcon()" class="icon pointer"/>
             <n-avatar
                 round
                 size="medium"
                 src="https://07akioni.oss-cn-beijing.aliyuncs.com/07akioni.jpeg"
+                class="pointer"
             />
           </div>
         </n-layout-footer>
@@ -112,5 +113,8 @@ const menuOptions: MenuOption[] = [
 .divider {
   margin-top: 7px;
   margin-bottom: 7px;
+}
+.pointer{
+  cursor: pointer;
 }
 </style>

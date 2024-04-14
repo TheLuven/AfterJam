@@ -21,5 +21,17 @@ export default {
     },
     "Input": {
         "color": "rgba(0, 0, 0, 1)"
+    },
+    "DataTable": {
+        "borderColor": "rgba(0, 0, 0, 1)",
+        "actionDividerColor": "rgb(239, 239, 245)",
+        "borderColor": "rgba(239, 239, 245, 1)",
+        "tdColorHover": "rgba(0, 0, 0, 1)",
+        "tdColor": "#070709FF",
+        "thTextColor": "rgba(255, 255, 255, 1)",
+        "thColor": "rgba(0, 0, 0, 1)",
+        "tdTextColor": "rgba(255, 255, 255, 1)",
+        "thFontWeight": "700",
+        "thColorHover": "rgba(243, 243, 247, 1)"
     }
 };

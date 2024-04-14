@@ -3,6 +3,7 @@ import Menu from '../permanent/Menu.vue';
 import Carousel from '../utils/Carousel.vue'
 import SongSlider from "../utils/SongSlider.vue";
 import SearchBar from "../utils/SearchBar.vue";
+import VerifyTable from "../utils/VerifyTable.vue";
 </script>
 
 <template>
@@ -24,16 +25,9 @@ import SearchBar from "../utils/SearchBar.vue";
               </div>
             </n-flex>
           </n-layout-header>
-          <div class="carousel">
-            <Carousel/>
+          <div class="table">
+            <verify-table/>
           </div>
-          <n-layout-footer position="absolute">
-            <n-flex direction="column" align="center" justify="center" class="flex-slider">
-              <div class="slider">
-                <SongSlider/>
-              </div>
-            </n-flex>
-          </n-layout-footer>
         </n-flex>
       </n-layout>
     </n-layout>
@@ -77,8 +71,8 @@ import SearchBar from "../utils/SearchBar.vue";
 .header{
   width: 95%;
 }
-.carousel{
-  width: 100%;
+.table{
+  width: 80%;
   padding-top: 5vh;
 }
 
