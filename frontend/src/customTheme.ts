@@ -25,7 +25,6 @@ export default {
     "DataTable": {
         "borderColor": "rgba(0, 0, 0, 1)",
         "actionDividerColor": "rgb(239, 239, 245)",
-        "borderColor": "rgba(239, 239, 245, 1)",
         "tdColorHover": "rgba(0, 0, 0, 1)",
         "tdColor": "#070709FF",
         "thTextColor": "rgba(255, 255, 255, 1)",

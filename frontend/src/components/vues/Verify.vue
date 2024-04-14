@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import Menu from '../permanent/Menu.vue';
-import Carousel from '../utils/Carousel.vue'
-import SongSlider from "../utils/SongSlider.vue";
 import SearchBar from "../utils/SearchBar.vue";
 import VerifyTable from "../utils/VerifyTable.vue";
 </script>
