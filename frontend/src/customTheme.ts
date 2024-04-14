@@ -18,5 +18,8 @@ export default {
     },
     "Layout": {
         "textColor": "rgba(200, 206, 211, 1)"
+    },
+    "Input": {
+        "color": "rgba(0, 0, 0, 1)"
     }
 };

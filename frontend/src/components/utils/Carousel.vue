@@ -6,8 +6,8 @@
   <n-layout class="carousel">
     <n-carousel
         effect="card"
-        prev-slide-style="transform: translateX(-150%) translateZ(-800px);"
-        next-slide-style="transform: translateX(50%) translateZ(-800px);"
+        prev-slide-style="transform: translateX(-125%) translateZ(-400px) translateY(-10%);"
+        next-slide-style="transform: translateX(25%) translateZ(-400px) translateY(-10%);"
         :show-dots="false"
         :show-arrow="false"
         manual="false"
@@ -89,8 +89,8 @@
 .carousel {
   position: relative;
   background-color: var(--backgroundColor);
-  width: 40%;
-  height: 25vw;
+  width: 100vw;
+  height: 50vw;
 }
 .carousel-content {
   width: 100%;
