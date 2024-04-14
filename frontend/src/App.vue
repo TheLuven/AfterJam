@@ -13,6 +13,7 @@ export default defineComponent({
     NThemeEditor
   }
 })
+
 </script>
 
 <template>

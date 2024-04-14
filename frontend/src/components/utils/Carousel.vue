@@ -1,4 +1,16 @@
 <script setup lang="ts">
+import { onMounted } from 'vue';
+
+let carouselElement;
+
+onMounted(() => {
+  carouselElement = document.querySelector('.carousel');
+  if (carouselElement) {
+    carouselElement.addEventListener('wheel', (event) => {
+      event.preventDefault();
+    }, { passive: false });
+  }
+});
 
 </script>
 
