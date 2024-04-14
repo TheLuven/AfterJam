@@ -54,6 +54,7 @@ import {
 import {
   Home as Home
 } from '@vicons/carbon'
+import router from "../../router.ts";
 
 function renderIcon(icon: any) {
   return () => h(NIcon, null, {default: () => h(icon)})
@@ -61,18 +62,20 @@ function renderIcon(icon: any) {
 function renderSettingsIcon() {
   return h(NIcon, null, { default: () => h(SettingsIcon) })
 }
-const collapsed = ref(false);
+const collapsed = ref(true);
 const inverted = ref(false);
 const menuOptions: MenuOption[] = [
   {
     label: 'Acceuil',
     key: 'home',
-    icon: renderIcon(Home)
+    icon: renderIcon(Home),
+    onClick: () => router.push('/home')
   },
   {
     label: 'Vérifier',
     key: 'verified',
     icon: renderIcon(ListIcon),
+    onClick: () => router.push('/verify')
   },
   {
     label: 'Jam Session',
