@@ -42,7 +42,7 @@ export default defineComponent({
       // Add your logic here
     };
     return {
-      value: ref(50),
+      value: ref(0),
       Pause,
       Next,
       DotsVertical,
@@ -134,8 +134,5 @@ export default defineComponent({
   font-size: 4vh;
   transform: scaleX(-1) !important; /* Add this line */
   padding: 8px;
-}
-.pointer{
-  cursor: pointer;
 }
 </style>

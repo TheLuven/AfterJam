@@ -19,6 +19,15 @@ export default {
     "Layout": {
         "textColor": "rgba(200, 206, 211, 1)"
     },
+    "Switch": {
+        "iconColor": "rgb(118, 124, 130)",
+        "railColor": "rgba(255, 255, 255, 0.14)"
+    },
+    "Collapse": {
+        "dividerColor": "rgba(78, 78, 82, 1)",
+        "titleTextColor": "rgba(255, 255, 255, 1)",
+        "arrowColor": "rgba(255, 255, 255, 1)"
+    },
     "Input": {
         "color": "rgba(0, 0, 0, 1)"
     },
