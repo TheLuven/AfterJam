@@ -141,7 +141,4 @@ const menuOptions: MenuOption[] = [
   margin-top: 7px;
   margin-bottom: 7px;
 }
-.pointer{
-  cursor: pointer;
-}
 </style>

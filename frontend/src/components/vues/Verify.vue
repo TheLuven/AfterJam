@@ -6,19 +6,7 @@ import VerifyTable from "../utils/VerifyTable.vue";
 <template>
   <n-layout class="content-container">
     <n-flex direction="column" align="center" justify="center" class="flex">
-      <n-layout-header position="absolute">
-        <n-flex direction="column" align="center" justify="center" class="flex-header">
-          <div class="header">
-            <n-space justify="space-between">
-              <n-space vertical align="start">
-                <span style="font-weight: bold; font-size: 1.4vw; color: #18a058">Nom de la Jam Session</span>
-                <span style=" font-size: 1.1vw">Jam Code</span>
-              </n-space>
-              <SearchBar/>
-            </n-space>
-          </div>
-        </n-flex>
-      </n-layout-header>
+      <SearchBar/>
       <div class="table">
         <verify-table/>
       </div>
@@ -37,17 +25,8 @@ import VerifyTable from "../utils/VerifyTable.vue";
   justify-content: center;
 }
 
-.flex-header {
-  background-color: var(--backgroundColor);
-  padding-top: 4vh;
-}
-
 .flex {
   width: 100vw;
-}
-
-.header {
-  width: 95%;
 }
 
 .table {

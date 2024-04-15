@@ -135,7 +135,4 @@ export default defineComponent({
   transform: scaleX(-1) !important; /* Add this line */
   padding: 8px;
 }
-.pointer{
-  cursor: pointer;
-}
 </style>

@@ -81,9 +81,6 @@ export default defineComponent({
 .background {
   background-color: var(--backgroundColor);
 }
-.pointer{
-  cursor: pointer;
-}
 .spotify {
   background-color: #1DB954;
   color: white;

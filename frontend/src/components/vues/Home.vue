@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import Menu from '../permanent/Menu.vue';
 import Carousel from '../utils/Carousel.vue'
 import SongSlider from "../utils/SongSlider.vue";
 import SearchBar from "../utils/SearchBar.vue";
@@ -8,19 +7,7 @@ import SearchBar from "../utils/SearchBar.vue";
 <template>
   <n-layout class="content-container">
     <n-flex direction="column" align="center" justify="center" class="flex">
-      <n-layout-header position="absolute">
-        <n-flex direction="column" align="center" justify="center" class="flex-header">
-          <div class="header">
-            <n-space justify="space-between">
-              <n-space vertical align="start">
-                <span style="font-weight: bold; font-size: 1.4vw; color: #18a058">Nom de la Jam Session</span>
-                <span style=" font-size: 1.1vw">Jam Code</span>
-              </n-space>
-              <SearchBar/>
-            </n-space>
-          </div>
-        </n-flex>
-      </n-layout-header>
+      <SearchBar/>
       <div class="carousel">
         <Carousel/>
       </div>
@@ -50,10 +37,7 @@ import SearchBar from "../utils/SearchBar.vue";
   background-color: var(--backgroundColor);
 }
 
-.flex-header {
-  background-color: var(--backgroundColor);
-  padding-top: 4vh;
-}
+
 
 .flex {
   width: 100vw;
@@ -64,9 +48,7 @@ import SearchBar from "../utils/SearchBar.vue";
   padding-bottom: 5vh;
 }
 
-.header {
-  width: 95%;
-}
+
 
 .carousel {
   width: 100%;
