@@ -25,10 +25,10 @@ export default defineComponent({
       <n-tab-pane name="signin" tab="Se connecter">
         <n-form>
           <n-form-item-row label="Nom d'utilisateur">
-            <n-input />
+            <n-input placeholder=""/>
           </n-form-item-row>
           <n-form-item-row label="Mot de passe">
-            <n-input />
+            <n-input placeholder=""/>
           </n-form-item-row>
         </n-form>
         <n-button type="primary" block secondary strong>
@@ -38,13 +38,13 @@ export default defineComponent({
       <n-tab-pane name="signup" tab="S'inscrire">
         <n-form>
           <n-form-item-row label="Nom d'utilisateur">
-            <n-input />
+            <n-input placeholder=""/>
           </n-form-item-row>
           <n-form-item-row label="Mot de passe">
-            <n-input />
+            <n-input placeholder=""/>
           </n-form-item-row>
           <n-form-item-row label="Confirmer le mot de passe">
-            <n-input />
+            <n-input placeholder=""/>
           </n-form-item-row>
         </n-form>
         <n-button type="primary" block secondary strong>

@@ -65,12 +65,12 @@ const createColumns = (): DataTableColumns<Song> => {
     {
       title : 'Album',
       key: 'album',
-      width: 400
+      width: 360
     },
     {
       title: 'Titre',
       key: 'title',
-      width: 400
+      width: 300
     },
     {
       title: 'Artiste',
@@ -128,7 +128,7 @@ export default defineComponent({
       data,
       columns: createColumns(),
       pagination: {
-        pageSize: 7
+        pageSize: 6
       },
       Clock,
       Check,
@@ -146,7 +146,7 @@ export default defineComponent({
 }
 
 .table {
-  height: 78vh; /* Adjust this value to change the height of the table */
+  height: 73vh; /* Adjust this value to change the height of the table */
   overflow-x: clip; /* Add this line to enable scrolling if the content exceeds the height */
   overflow-y: auto; /* Add this line to enable scrolling if the content exceeds the height */
 }

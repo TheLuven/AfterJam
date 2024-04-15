@@ -15,7 +15,9 @@ export default defineComponent({
     <n-flex direction="column" align="center" justify="center" class="flex">
       <SearchBar/>
       <div class="config">
-        <JamConfigTab/>
+        <n-scrollbar height="80vh" inset>
+          <JamConfigTab/>
+        </n-scrollbar>
       </div>
       <n-layout-footer class="background">
         <n-space justify="end" class="footer">
@@ -37,9 +39,11 @@ export default defineComponent({
   align-items: center;
   justify-content: center;
 }
+
 .footer {
   width: 85vw;
 }
+
 .flex {
   width: 100vw;
 }
@@ -49,6 +53,7 @@ export default defineComponent({
   height: 72vh;
   padding-top: 10vh;
 }
+
 .background {
   background-color: var(--backgroundColor);
 }
