@@ -27,20 +27,23 @@
         >
           <n-divider class="divider"/>
           <div class="settings-icon">
-            <component :is="renderSettingsIcon()" class="icon pointer"/>
+            <component v-if="!collapsed" :is="renderSettingsIcon()" class="icon pointer"/>
             <n-avatar
+                v-if="isLoggedIn && !collapsed"
                 round
                 size="medium"
                 src="https://07akioni.oss-cn-beijing.aliyuncs.com/07akioni.jpeg"
                 class="pointer"
             />
+            <n-button v-if="!isLoggedIn && !collapsed && showButton" type="success" round ghost @click="router.push('/login')">S'inscrire</n-button>
+            <n-icon v-if="collapsed" :component="renderRegisterIcon()" @click="router.push('/login')" class="icon-register pointer"/>
           </div>
         </n-layout-footer>
       </n-layout-sider>
 </template>
 <script setup lang="ts">
-
-import {h, ref} from 'vue'
+import router from "../../router.ts";
+import {h, ref, watch} from 'vue'
 import {MenuOption, NIcon} from 'naive-ui'
 import {
   SettingsOutline as SettingsIcon,
@@ -54,8 +57,15 @@ import {
 import {
   Home as Home
 } from '@vicons/carbon'
-import router from "../../router.ts";
 
+import { SignInAlt as RegisterIcon } from '@vicons/fa';
+const showButton = ref(false);
+
+// Add this function to render the register icon
+function renderRegisterIcon() {
+  return h(NIcon, null, { default: () => h(RegisterIcon) })
+}
+const isLoggedIn = ref(false);
 function renderIcon(icon: any) {
   return () => h(NIcon, null, {default: () => h(icon)})
 }
@@ -64,6 +74,15 @@ function renderSettingsIcon() {
 }
 const collapsed = ref(true);
 const inverted = ref(false);
+watch(collapsed, (newValue, oldValue) => {
+  if (oldValue && !newValue) {
+    setTimeout(() => {
+      showButton.value = true;
+    }, 75); // Adjust this value to match the duration of your uncollapse animation
+  } else if (!oldValue && newValue) {
+    showButton.value = false;
+  }
+});
 const menuOptions: MenuOption[] = [
   {
     label: 'Acceuil',
@@ -102,6 +121,11 @@ const menuOptions: MenuOption[] = [
 .icon {
   font-size: 34px;
  }
+.icon-register {
+  font-size: 25px;
+  color: #1DB954;
+ }
+
 .logo {
   width: 60px; /* Adjust as needed */
   height: auto; /* This will maintain the aspect ratio */

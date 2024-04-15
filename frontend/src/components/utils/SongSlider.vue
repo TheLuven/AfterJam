@@ -42,7 +42,7 @@ export default defineComponent({
       // Add your logic here
     };
     return {
-      value: ref(50),
+      value: ref(0),
       Pause,
       Next,
       DotsVertical,

@@ -54,11 +54,11 @@ export default defineComponent({
     </n-tabs>
     <n-divider/>
     <n-button type="primary" class="spotify" block secondary strong @click="">
-      <n-icon :component="BrandSpotify" class="icon pointer"/>
+      <n-icon  :component="BrandSpotify" class="icon pointer"/>
       Se connecter avec Spotify
     </n-button>
   </n-card>
-  <n-button type="text" class="jam" @click="router.push('/home')">Rejoindre une Jam Session</n-button>
+  <n-button class="jam" type="success" round ghost @click="router.push('/home')">Rejoindre une Jam Session</n-button>
   </n-layout>
 </template>
 
@@ -93,8 +93,5 @@ export default defineComponent({
 }
 .jam {
   margin-top: 20px;
-  color: #fff;
-  font-size: 15px;
-  background-color: transparent;
 }
 </style>
