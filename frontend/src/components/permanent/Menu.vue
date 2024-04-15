@@ -44,7 +44,7 @@
 <script setup lang="ts">
 import router from "../../router.ts";
 import {h, ref, watch} from 'vue'
-import {MenuOption, NIcon} from 'naive-ui'
+import {MenuOption, NBadge, NIcon} from 'naive-ui'
 import {
   SettingsOutline as SettingsIcon,
 } from '@vicons/ionicons5'
@@ -60,6 +60,7 @@ import {
 
 import { SignInAlt as RegisterIcon } from '@vicons/fa';
 const showButton = ref(false);
+const value = ref(5); // Initialize it with a default value, for example, 0
 
 // Add this function to render the register icon
 function renderRegisterIcon() {
@@ -85,7 +86,7 @@ watch(collapsed, (newValue, oldValue) => {
 });
 const menuOptions: MenuOption[] = [
   {
-    label: 'Acceuil',
+    label: 'Accueil',
     key: 'home',
     icon: renderIcon(Home),
     onClick: () => router.push('/home')
@@ -93,13 +94,14 @@ const menuOptions: MenuOption[] = [
   {
     label: 'Vérifier',
     key: 'verified',
-    icon: renderIcon(ListIcon),
+    icon: () => h(NBadge, { value: value.value, max: 99 }, { default: () => h(NIcon, null, { default: () => h(ListIcon) }) }),
     onClick: () => router.push('/verify')
   },
   {
     label: 'Jam Session',
     key: 'configure',
-    icon: renderIcon(PeopleSettingsIcon)
+    icon: renderIcon(PeopleSettingsIcon),
+    onClick: () => router.push('/jam-config')
   }
 ]
 </script>
