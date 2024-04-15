@@ -18,6 +18,7 @@ export default defineComponent({
 </script>
 
 <template>
+  <n-layout class="background">
   <n-card class="card" >
     <img src="../../../public/assets/LogoInversed.svg" alt="Logo" class="logo"/>
     <n-tabs default-value="signin" size="large" justify-content="space-evenly">
@@ -58,13 +59,13 @@ export default defineComponent({
     </n-button>
   </n-card>
   <n-button type="text" class="jam" @click="router.push('/home')">Rejoindre une Jam Session</n-button>
+  </n-layout>
 </template>
 
 <style scoped>
 .card {
   width: 30vw;
-  margin: 0 auto;
-  margin-top: 100px;
+  margin: 100px auto 0;
   background-color: var(--secondaryBackground);
 }
 .logo {
@@ -77,7 +78,9 @@ export default defineComponent({
   font-size: 5vh;
   padding: 8px;
 }
-
+.background {
+  background-color: var(--backgroundColor);
+}
 .pointer{
   cursor: pointer;
 }
@@ -92,5 +95,6 @@ export default defineComponent({
   margin-top: 20px;
   color: #fff;
   font-size: 15px;
+  background-color: transparent;
 }
 </style>

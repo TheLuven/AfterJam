@@ -14,5 +14,14 @@ const router = createRouter({
     history: createWebHistory(),
     routes,
 });
+router.beforeEach((to, from, next) => {
+    // replace 'isLoggedIn' with your actual authentication check
+    const isLoggedIn = true;
 
+    if (!isLoggedIn && to.path !== '/login') {
+        next('/login');
+    } else {
+        next();
+    }
+});
 export default router;
