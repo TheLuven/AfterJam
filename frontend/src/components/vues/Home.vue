@@ -2,12 +2,29 @@
 import Carousel from '../utils/Carousel.vue'
 import SongSlider from "../utils/SongSlider.vue";
 import SearchBar from "../utils/SearchBar.vue";
+import SearchDrawer from "../utils/SearchDrawer.vue";
+import {onMounted, ref} from "vue";
+
+const isContainerReady = ref(false);
+const isDrawerOpen = ref(false);
+
+onMounted(() => {
+  isContainerReady.value = true;
+});
+
+const openDrawer = () => {
+  isDrawerOpen.value = true;
+};
+
+const updateDrawerActive = (newVal) => {
+  isDrawerOpen.value = newVal;
+};
 </script>
 
 <template>
-  <n-layout class="content-container">
+  <n-layout class="content-container" id="container">
     <n-flex direction="column" align="center" justify="center" class="flex">
-      <SearchBar/>
+      <SearchBar @openDrawer="openDrawer"/>
       <div class="carousel">
         <Carousel/>
       </div>
@@ -19,6 +36,7 @@ import SearchBar from "../utils/SearchBar.vue";
         </n-flex>
       </n-layout-footer>
     </n-flex>
+    <SearchDrawer v-if="isContainerReady" :active="isDrawerOpen" @update:active="updateDrawerActive"/>
   </n-layout>
 </template>
 
