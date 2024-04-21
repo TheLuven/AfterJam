@@ -1,55 +1,46 @@
 <script setup lang="ts">
-import Menu from '../permanent/Menu.vue';
 import Carousel from '../utils/Carousel.vue'
 import SongSlider from "../utils/SongSlider.vue";
 import SearchBar from "../utils/SearchBar.vue";
+import SearchDrawer from "../utils/SearchDrawer.vue";
+import {onMounted, ref} from "vue";
+
+const isContainerReady = ref(false);
+const isDrawerOpen = ref(false);
+
+onMounted(() => {
+  isContainerReady.value = true;
+});
+
+const openDrawer = () => {
+  isDrawerOpen.value = true;
+};
+
+const updateDrawerActive = (newVal) => {
+  isDrawerOpen.value = newVal;
+};
 </script>
 
 <template>
-  <div id="home" class="background">
-    <n-layout has-sider class="background-content">
-      <Menu/>
-      <n-layout class="content-container">
-        <n-flex direction="column" align="center" justify="center" class="flex">
-          <n-layout-header position="absolute">
-            <n-flex direction="column" align="center" justify="center" class="flex-header">
-              <div class="header">
-                <n-space justify="space-between">
-                  <n-space vertical align="start" >
-                    <span style="font-weight: bold; font-size: 1.4vw; color: #18a058">Nom de la Jam Session</span>
-                    <span style=" font-size: 1.1vw">Jam Code</span>
-                  </n-space>
-                  <SearchBar/>
-                </n-space>
-              </div>
-            </n-flex>
-          </n-layout-header>
-          <div class="carousel">
-            <Carousel/>
+  <n-layout class="content-container" id="container">
+    <n-flex direction="column" align="center" justify="center" class="flex">
+      <SearchBar @openDrawer="openDrawer"/>
+      <div class="carousel">
+        <Carousel/>
+      </div>
+      <n-layout-footer position="absolute">
+        <n-flex direction="column" align="center" justify="center" class="flex-slider">
+          <div class="slider">
+            <SongSlider/>
           </div>
-          <n-layout-footer position="absolute">
-            <n-flex direction="column" align="center" justify="center" class="flex-slider">
-              <div class="slider">
-                <SongSlider/>
-              </div>
-            </n-flex>
-          </n-layout-footer>
         </n-flex>
-      </n-layout>
-    </n-layout>
-  </div>
+      </n-layout-footer>
+    </n-flex>
+    <SearchDrawer v-if="isContainerReady" :active="isDrawerOpen" @update:active="updateDrawerActive"/>
+  </n-layout>
 </template>
 
 <style scoped>
-.background-content {
-  background-color: var(--backgroundColor);
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
 
 .content-container {
   padding-top: 10vh;
@@ -59,25 +50,25 @@ import SearchBar from "../utils/SearchBar.vue";
   align-items: center;
   justify-content: center;
 }
-.flex-slider{
+
+.flex-slider {
   background-color: var(--backgroundColor);
 }
-.flex-header{
-  background-color: var(--backgroundColor);
-  padding-top: 4vh;
-}
+
+
+
 .flex {
   width: 100vw;
 }
 
-.slider{
+.slider {
   width: 80%;
   padding-bottom: 5vh;
 }
-.header{
-  width: 95%;
-}
-.carousel{
+
+
+
+.carousel {
   width: 100%;
   padding-top: 5vh;
 }

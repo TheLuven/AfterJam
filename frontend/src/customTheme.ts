@@ -19,13 +19,29 @@ export default {
     "Layout": {
         "textColor": "rgba(200, 206, 211, 1)"
     },
+    "Switch": {
+        "iconColor": "rgb(118, 124, 130)",
+        "railColor": "rgba(255, 255, 255, 0.14)"
+    },
+    "Collapse": {
+        "dividerColor": "rgba(78, 78, 82, 1)",
+        "titleTextColor": "rgba(255, 255, 255, 1)",
+        "arrowColor": "rgba(255, 255, 255, 1)"
+    },
     "Input": {
         "color": "rgba(0, 0, 0, 1)"
     },
     "DataTable": {
+        "tdColorModal": "#000000FF",
+        "tdColorPopover": "#000000FF",
+        "borderColorPopover": "rgba(239, 239, 245, 1)",
+        "thColorModal": "rgba(7, 7, 9, 1)",
+        "borderColorModal": "rgba(7, 7, 9, 1)",
+        "tdColorHoverPopover": "rgba(0, 0, 0, 1)",
+        "thColorHoverModal": "rgba(0, 0, 0, 1)",
+        "tdColorHoverModal": "rgba(0, 0, 0, 1)",
         "borderColor": "rgba(0, 0, 0, 1)",
         "actionDividerColor": "rgb(239, 239, 245)",
-        "borderColor": "rgba(239, 239, 245, 1)",
         "tdColorHover": "rgba(0, 0, 0, 1)",
         "tdColor": "#070709FF",
         "thTextColor": "rgba(255, 255, 255, 1)",
