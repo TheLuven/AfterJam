@@ -2,12 +2,19 @@
 import {defineComponent, ref} from 'vue'
 import {ListSearch} from '@vicons/tabler'
 import {UserData} from '@vicons/carbon'
+import SearchDrawer from "./SearchDrawer.vue";
 
 export default defineComponent({
+  components: {
+    SearchDrawer
+  },
   setup() {
     const jamLeader = ref(false);
-
+    const openDrawer = () => {
+      SearchDrawer.active = true;
+    }
     return {
+      openDrawer,
       ListSearch,
       UserData,
       jamLeader
@@ -26,15 +33,14 @@ export default defineComponent({
             <span style=" font-size: 1.1vw">Jam Code</span>
           </n-space>
           <n-space align="center" justify="center">
-              <n-icon :component="UserData" class="icon-jam-user pointer"/>
-              <span>153</span>
+            <n-icon :component="UserData" class="icon-jam-user pointer"/>
+            <span>153</span>
           </n-space>
           <n-space vertical align="end">
-            <n-input round placeholder="Rechercher une musique" class="input">
-              <template #suffix>
-                <n-icon :component="ListSearch" class="icon"/>
-              </template>
-            </n-input>
+            <n-button color="white" ghost @click="$emit('openDrawer')">
+              <n-icon :component="ListSearch" class="icon"/>
+              Rechercher une musique
+            </n-button>
             <n-button round type="error" v-if="!jamLeader">Quitter la Jam</n-button>
           </n-space>
         </n-space>
@@ -54,10 +60,7 @@ export default defineComponent({
   width: 95%;
 }
 
-.input {
-  width: 13vw;
-}
-.icon-jam-user{
+.icon-jam-user {
   color: #18a058;
   font-size: 1.5vw;
 }

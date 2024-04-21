@@ -58,7 +58,7 @@ export default defineComponent({
       Se connecter avec Spotify
     </n-button>
   </n-card>
-  <n-button class="jam" type="success" round ghost @click="router.push('/home')">Rejoindre une Jam Session</n-button>
+  <n-button class="jam" type="success" round ghost @click="router.push('/join-jam')">Rejoindre une Jam Session</n-button>
   </n-layout>
 </template>
 

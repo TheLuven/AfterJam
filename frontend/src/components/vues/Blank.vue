@@ -6,7 +6,7 @@ import Menu from "../permanent/Menu.vue";
 <template>
   <div class="background">
     <n-layout has-sider class="background-content">
-      <Menu v-if="$route.path !== '/login'"/>
+      <Menu v-if="$route.path !== '/login' && $route.path !== '/join-jam' "/>
       <router-view></router-view>
     </n-layout>
   </div>

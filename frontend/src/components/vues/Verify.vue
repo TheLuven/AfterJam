@@ -1,16 +1,46 @@
-<script setup lang="ts">
+<script lang="ts">
 import SearchBar from "../utils/SearchBar.vue";
 import VerifyTable from "../utils/VerifyTable.vue";
+import SearchDrawer from "../utils/SearchDrawer.vue";
+import {defineComponent, onMounted, ref} from "vue";
+import JamConfigTab from "../utils/JamConfigTab.vue";
+export default defineComponent({
+  components: {SearchDrawer, VerifyTable, SearchBar, JamConfigTab},
+  setup() {
+    const isContainerReady = ref(false);
+    const isDrawerOpen = ref(false);
+
+    onMounted(() => {
+      isContainerReady.value = true;
+    });
+
+    const openDrawer = () => {
+      isDrawerOpen.value = true;
+    };
+
+    const updateDrawerActive = (newVal) => {
+      isDrawerOpen.value = newVal;
+    };
+
+    return {
+      isContainerReady,
+      isDrawerOpen,
+      openDrawer,
+      updateDrawerActive
+    }
+  }
+})
 </script>
 
 <template>
-  <n-layout class="content-container">
+  <n-layout class="content-container" id="container">
     <n-flex direction="column" align="center" justify="center" class="flex">
-      <SearchBar/>
+      <SearchBar @openDrawer="openDrawer"/>
       <div class="table">
         <verify-table/>
       </div>
     </n-flex>
+    <SearchDrawer v-if="isContainerReady" :active="isDrawerOpen" @update:active="updateDrawerActive"/>
   </n-layout>
 </template>
 

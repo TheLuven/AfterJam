@@ -69,7 +69,7 @@ const selectPlaylist = (playlist) => {
     </n-collapse-item>
   </n-collapse>
   <n-collapse>
-    <n-collapse-item title="Vos Playlists" name="2">
+    <n-collapse-item title="Vos Playlists." name="2">
       <div class="param-space">
         <n-grid :cols="6" gap="lg">
           <n-grid-item v-for="(playlist, index) in playUser" :key="index" @click="selectPlaylist(playlist)" :class="{ selected: playlist.id === selectedPlaylistId }">
@@ -81,7 +81,7 @@ const selectPlaylist = (playlist) => {
     </n-collapse-item>
   </n-collapse>
   <n-collapse>
-    <n-collapse-item title="Playlists de Spotify" name="2">
+    <n-collapse-item title="Playlists de Spotify." name="2">
       <div class="param-space">
         <n-grid :cols="6" gap="lg">
           <n-grid-item v-for="(playlist, index) in playSpotify" :key="index" @click="selectPlaylist(playlist)" :class="{ selected: playlist.id === selectedPlaylistId }">
